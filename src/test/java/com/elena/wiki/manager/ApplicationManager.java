@@ -2,6 +2,7 @@ package com.elena.wiki.manager;
 
 import com.google.common.io.Files;
 import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -22,13 +23,13 @@ public class ApplicationManager {
   public void init() throws MalformedURLException {
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("platformName", "Android");
-    capabilities.setCapability("deviceName", "qa22_home");
+    capabilities.setCapability("deviceName", "QA22");
     capabilities.setCapability("platformVersion", "8.0");
     capabilities.setCapability("automationName", "Appium");
     capabilities.setCapability("appPackage", "org.wikipedia");
     capabilities.setCapability("appActivity", ".main.MainActivity");
     capabilities.setCapability("app",
-            "C:\\Users\\Elena\\Dropbox\\Tel-ran\\Mobile\\apk\\org.wikipedia.apk");
+            "C:\\Users\\VladQA\\Documents\\GitHub\\Wiki_mob_qa23\\src\\test\\resources\\apk\\org.wikipedia.apk");
 
     driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
@@ -48,6 +49,10 @@ public class ApplicationManager {
 //    wd.getWindowHandles();
 //    wd.getWindowHandle();
 
+  }
+
+  public void skipWelcomePage() {
+    driver.findElement(By.xpath("//android.widget.TextView[@resource-id='org.wikipedia:id/fragment_onboarding_skip_button']"));
   }
 
 
