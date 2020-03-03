@@ -1,11 +1,11 @@
 package com.elena.wiki.utils;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
+        import org.slf4j.Logger;
+        import org.slf4j.LoggerFactory;
+        import org.testng.ITestListener;
+        import org.testng.ITestResult;
 
-import static com.elena.wiki.tests.TestBase.app;
+        import static com.elena.wiki.tests.TestBase.app;
 
 
 public class Listener implements ITestListener {

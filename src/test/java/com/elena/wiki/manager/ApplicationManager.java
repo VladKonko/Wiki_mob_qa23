@@ -1,22 +1,17 @@
 package com.elena.wiki.manager;
 
-import com.google.common.io.Files;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
-  Logger logger = LoggerFactory.getLogger(ApplicationManager.class);
+//  Logger logger = LoggerFactory.getLogger(ApplicationManager.class);
   ArticleHelper article;
   AppiumDriver driver;
 
@@ -46,13 +41,16 @@ public class ApplicationManager {
   public void stop() throws InterruptedException {
     Thread.sleep(5000);
     driver.quit();
+
+
 //    wd.getWindowHandles();
 //    wd.getWindowHandle();
 
   }
 
   public void skipWelcomePage() {
-    driver.findElement(By.xpath("//android.widget.TextView[@resource-id='org.wikipedia:id/fragment_onboarding_skip_button']"));
+    driver.findElement(By.xpath("//android.widget.TextView[@resource-id='org.wikipedia:id/fragment_onboarding_skip_button']")).click();
+
   }
 
 
